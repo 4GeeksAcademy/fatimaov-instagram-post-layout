@@ -22,6 +22,7 @@ body * {
   --bg-color: white;
   --text-color: black;
   --body-color: tan;
+  --post-padding: 10px;
 }
 
 
@@ -40,10 +41,10 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   max-width: 500px;
-  padding: 10px;
+  padding: var(--post-padding);
   gap: 10px;
   border-radius: 10px;
-
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .post-header {
@@ -72,7 +73,7 @@ i {
 .post-img {
   height: 300px;
   overflow: hidden;
-  margin: 0 -10px;
+  margin: 0 calc(-1 * var(--post-padding));
 }
 
 img {
@@ -91,6 +92,15 @@ img {
 .post-icons {
   display: flex;
   justify-content: space-between;
+}
+
+.fa-solid.fa-heart {
+  display: none;
+  color: crimson;
+}
+
+.fa-solid.fa-bookmark {
+  display: none;
 }
 
 b:hover {
