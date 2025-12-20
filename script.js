@@ -4,6 +4,10 @@ const heartSolid = document.getElementById('heart-solid');
 const bookmarkRegular = document.getElementById('bookmark-regular');
 const bookmarkSolid = document.getElementById('bookmark-solid');
 
+// Initial state: solid icons hidden
+heartSolid.style.display = 'none';
+heartSolid.style.color = 'crimson';
+bookmarkSolid.style.display = 'none';
 
 
 // Heart icon interactivity
@@ -27,4 +31,16 @@ bookmarkSolid.onclick = () => {
     bookmarkSolid.style.display = 'none';
     bookmarkRegular.style.display = 'inline-block';
 };
+
+// <b> elements interactivity
+document.querySelectorAll('b')
+    .forEach( b => {
+        b.onmouseover = () => {
+            b.style.textDecoration = 'underline';
+            b.style.cursor = 'pointer';
+        };
+        b.onmouseout = () => {
+            b.style.textDecoration = 'none';
+        };
+    });
 
